@@ -112,18 +112,22 @@ static int wmt_hwdep_ioctl(struct snd_hwdep *hw, struct file *file, unsigned int
 	
 	case WMT_SOC_IOCTL_VT1603_RD:
 		ret = copy_from_user(&vt1603_info, (void __user *)arg, sizeof(vt1603_info));
-		
+
+#if 0		
 		if (ret == 0) {
 			vt1603_info.reg_value = vt1603_hwdep_ioctl(0, vt1603_info.reg_offset, vt1603_info.reg_value);
 			printk("<<<%s read reg 0x%x val 0x%x\n", __FUNCTION__, vt1603_info.reg_offset, vt1603_info.reg_value);
 			ret = copy_to_user((void __user *)arg, &vt1603_info, sizeof(vt1603_info));
 		}
+#endif
 		return ret;
 	case WMT_SOC_IOCTL_VT1603_WR:  
 		ret = copy_from_user(&vt1603_info, (void __user *)arg, sizeof(vt1603_info));
 			printk("<<<%s write reg 0x%x val 0x%x\n", __FUNCTION__, vt1603_info.reg_offset, vt1603_info.reg_value);
+#if 0
 		if (ret == 0)
 			vt1603_hwdep_ioctl(1, vt1603_info.reg_offset, vt1603_info.reg_value);
+#endif
 		return ret;
 	
 	case WMT_SOC_IOCTL_CH_SEL:

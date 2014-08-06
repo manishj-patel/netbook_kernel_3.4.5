@@ -862,11 +862,11 @@ config TOUCHSCREEN_VT1609
 	  To compile this driver as a module, choose M here: the
 	  module will be called vt1609_dual_ts.  
 
-source "drivers/input/touchscreen/gsl1680_ts/Kconfig"
-source "drivers/input/touchscreen/sitronix/Kconfig"
-source "drivers/input/touchscreen/zet6221_ts/Kconfig"
-source "drivers/input/touchscreen/cyp140_ts/Kconfig"
-source "drivers/input/touchscreen/ft5x0x/Kconfig"
-source "drivers/input/touchscreen/aw5306_ts/Kconfig"
-source "drivers/input/touchscreen/gt9xx_ts/Kconfig"
+#source "drivers/input/touchscreen/gsl1680_ts/Kconfig"
+#source "drivers/input/touchscreen/sitronix/Kconfig"
+#source "drivers/input/touchscreen/zet6221_ts/Kconfig"
+#source "drivers/input/touchscreen/cyp140_ts/Kconfig"
+#source "drivers/input/touchscreen/ft5x0x/Kconfig"
+#source "drivers/input/touchscreen/aw5306_ts/Kconfig"
+#source "drivers/input/touchscreen/gt9xx_ts/Kconfig"
 endif

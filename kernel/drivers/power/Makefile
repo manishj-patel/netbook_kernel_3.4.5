@@ -15,10 +15,10 @@ obj-$(CONFIG_TEST_POWER)	+= test_power.o
 
 obj-$(CONFIG_BATTERY_WMT)	+= wmt_charger.o
 obj-$(CONFIG_BATTERY_WMT)	+= wmt_battery_common.o
-obj-$(CONFIG_BATTERY_WMT)	+= vt1603/
-obj-$(CONFIG_BATTERY_WMT)	+= ug31xx/
-obj-$(CONFIG_BATTERY_WMT)	+= bq27xx/
-obj-$(CONFIG_BATTERY_WMT)	+= g2214/
+#obj-$(CONFIG_BATTERY_WMT)	+= wmt_battery/gauge/vt1603/
+#obj-$(CONFIG_BATTERY_WMT)	+= ug31xx/
+#obj-$(CONFIG_BATTERY_WMT)	+= bq27xx/
+#obj-$(CONFIG_BATTERY_WMT)	+= g2214/
 
 obj-$(CONFIG_BATTERY_DS2760)	+= ds2760_battery.o
 obj-$(CONFIG_BATTERY_DS2780)	+= ds2780_battery.o

@@ -114,24 +114,27 @@ int wmt_charger_is_bat_charging(void)
 }
 EXPORT_SYMBOL(wmt_charger_is_bat_charging);
 
+#if 0
 extern int g2214_is_dc_plugin(void);
 int wmt_charger_is_dc_plugin(void)
 {
 	return ((REG8_VAL(PM_CTRL_BASE_ADDR + 0x005d) & 0x01) && g2214_is_dc_plugin());
 }
 EXPORT_SYMBOL(wmt_charger_is_dc_plugin);
+#endif
 
+#if 0
 int wmt_charger_is_charging_full(void)
 {
 	return (wmt_charger_is_dc_plugin() && !wmt_charger_is_bat_charging()) ? 1 : 0;
 }
 EXPORT_SYMBOL(wmt_charger_is_charging_full);
+#endif
 
-extern void g2214_pc_connected(void);
+//extern void g2214_pc_connected(void);
 void wmt_pc_connected(void)
 {
     //ap5056_pc_connected();
 	printk("PC connected, charger work callback\n");
-	g2214_pc_connected();
+//	g2214_pc_connected();
 }
-

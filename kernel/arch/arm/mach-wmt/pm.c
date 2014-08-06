@@ -293,10 +293,12 @@ static void run_shutdown(struct work_struct *work)
 	ret = call_usermodehelper(argv[0], argv, envp_shutdown, 0);
 }
 
+#if 0
 //kevin add support wakeup3/wakeup0 to wakeup ap
 #include <mach/viatel.h>
 irqreturn_t viatelcom_irq_cp_wake_ap(int irq, void *data);
 extern int gpio_viatel_4wire[4];
+#endif
 
 void pmc_enable_wakeup_isr(enum wakeup_src_e wakeup_event, unsigned int type)
 {	  
@@ -792,6 +794,7 @@ static irqreturn_t pmc_wakeup_isr(int this_irq, void *dev_id)
 	rmb();
 
 
+#if 0
     //kevin add for wakeup3 to wakeup ap
 	if(status_i & (gpio_viatel_4wire[GPIO_VIATEL_USB_MDM_WAKE_AP]==149?BIT0:BIT2)){
 		//printk("call viatelcom_irq_cp_wake_ap\n");
@@ -799,6 +802,7 @@ static irqreturn_t pmc_wakeup_isr(int this_irq, void *dev_id)
 		PMCIS_VAL |= (gpio_viatel_4wire[GPIO_VIATEL_USB_MDM_WAKE_AP]==149?BIT0:BIT2);
 		
 	}
+#endif
 
 	/*
 	 * TODO : wakeup event and  interrupt event share the same interrupt

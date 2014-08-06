@@ -136,6 +136,7 @@ static void current_setting(struct wmt_charger *wc)
 		return;
 	}
 
+#if 0
 	/* normal charger:
 	 * 	USB cable conntect to PC - small current
 	 * 	USB cable conntect to adapter - large current
@@ -158,6 +159,7 @@ static void current_setting(struct wmt_charger *wc)
 		}
 	} else
 		set_large_current(wc, false);
+#endif
 }
 
 static int wmt_power_get_property(struct power_supply *psy,
@@ -201,7 +203,7 @@ static struct power_supply wmt_psy_ac = {
 static void wmt_charger_work(struct work_struct *work)
 {
 	struct wmt_charger *wc = wmt_charger;
-	int online = wmt_charger_is_dc_plugin();
+	int online;// = wmt_charger_is_dc_plugin();
 
 	/* report Discharging while USB connect to PC */
 	if (!wc->pc_charging &&

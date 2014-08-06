@@ -90,9 +90,9 @@ config BATTERY_DS2781
 
 	  If you are unsure, say N.
 
-source "drivers/power/vt1609/Kconfig"
+#source "drivers/power/vt1609/Kconfig"
 
-source "drivers/power/g2214/Kconfig"
+#source "drivers/power/g2214/Kconfig"
 
 
 config BATTERY_WMT
